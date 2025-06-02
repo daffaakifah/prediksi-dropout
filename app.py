@@ -60,7 +60,7 @@ def main():
     menu = st.sidebar.selectbox("Pilih Menu", ["Prediksi Enrolled", "Prediksi Input Pengguna"])
 
     if menu == "Prediksi Enrolled":
-        st.header("Prediksi Dropout Mahasiswa  berdasarkan data yang Sedang Enrolled")
+        st.write("Prediksi Dropout Mahasiswa  berdasarkan data yang Sedang Enrolled")
 
         pred_proba = model.predict_proba(df_enrolled)[:, 1]
         # Gunakan threshold 0.5 untuk klasifikasi
