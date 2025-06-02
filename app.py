@@ -57,7 +57,7 @@ def main():
     df_enrolled = load_data()
     df_enrolled = add_missing_features_with_defaults(df_enrolled)
 
-    menu = st.sidebar.selectbox("Pilih Menu", ["Prediksi Enrolled", "Prediksi Manual"])
+    menu = st.sidebar.selectbox("Pilih Menu", ["Prediksi Enrolled", "Prediksi Input Pengguna"])
 
     if menu == "Prediksi Enrolled":
         st.header("Prediksi Dropout Mahasiswa yang Sedang Enrolled")
@@ -82,8 +82,8 @@ def main():
         - **Peningkatan Keterlibatan:** Ajak mahasiswa untuk bergabung dalam kegiatan kampus dan kelompok belajar.
         """)
 
-    elif menu == "Prediksi Manual":
-        st.header("Prediksi Dropout Mahasiswa Berdasarkan Input Manual")
+    elif menu == "Prediksi Input Pengguna":
+        st.header("Prediksi Dropout Mahasiswa Berdasarkan Input Pengguna")
 
         with st.form("input_form"):
             completion_rate = st.number_input("1st Year Completion Unit Rate (0-1)", min_value=0.0, max_value=1.0, value=0.8, step=0.01)
