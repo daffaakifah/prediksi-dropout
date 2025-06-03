@@ -67,11 +67,11 @@ def main():
         preds = np.where(pred_proba < 0.5, 1, 0)
 
         df_enrolled['Prediksi_Dropout'] = np.where(preds == 1, 'Dropout', 'Tidak Dropout')
-        df_enrolled['Probabilitas_Dropout'] = pred_proba.round(3)
+        df_enrolled['Probabilitas_Graduate'] = pred_proba.round(3)
 
         st.dataframe(df_enrolled[[
             '1st_year_completion_unit_rate', '1st_year_enrolled_unit', 'Tuition_fees_up_to_date', '1st_year_approved_unit', 'Admission_grade', 'Scholarship_holder',  
-            '1st_year_unit_grade', '1st_year_success_evaluation_rate', 'Prediksi_Dropout', 'Probabilitas_Dropout'
+            '1st_year_unit_grade', '1st_year_success_evaluation_rate', 'Prediksi_Dropout', 'Probabilitas_Graduate'
         ]])
 
         st.markdown("""
@@ -112,15 +112,15 @@ def main():
             input_data = add_missing_features_with_defaults(input_data)
 
             prediction_proba = model.predict_proba(input_data)[0]
-            dropout_prob = prediction_proba[1]
-            status = "Dropout" if dropout_prob < 0.5 else "Dropout"
+            graduate_prob = prediction_proba[1]
+            status = "Dropout" if graduate_prob < 0.5 else "Tidak Dropout"
 
             st.subheader("Hasil Prediksi")
             st.write(f"Prediksi mahasiswa **{status}** dengan probabilitas:")
-            st.write(f"- Tidak Dropout: {dropout_prob:.2f}")
+            st.write(f"- Tidak Dropout: {graduate_prob:.2f}")
             st.write(f"- Dropout: {prediction_proba[0]:.2f}")
 
-            if dropout_prob < 0.5:
+            if graduate_prob < 0.5:
                 st.markdown("""
                 ### ⚠️ Rekomendasi Aksi untuk Mahasiswa yang Berpotensi Dropout:
                 - **Intervensi Akademik:** Berikan bimbingan belajar tambahan, konsultasi akademik, dan monitoring progres.
