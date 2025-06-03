@@ -52,7 +52,7 @@ def add_missing_features_with_defaults(df):
     return df
 
 def main():
-    st.header("📊 Prediksi Dropout Mahasiswa - Jaya Jaya Institute")
+    st.header("📊 Prediksi Dropout Siswa - Jaya Jaya Institute")
 
     df_enrolled = load_data()
     df_enrolled = add_missing_features_with_defaults(df_enrolled)
@@ -71,7 +71,7 @@ def main():
     menu = st.sidebar.selectbox("Pilih Menu", ["Prediksi Enrolled", "Prediksi Input Pengguna"])
 
     if menu == "Prediksi Enrolled":
-        st.markdown("### Prediksi Dropout Mahasiswa berdasarkan data yang Sedang Enrolled")
+        st.markdown("### Prediksi Dropout Siswa berdasarkan data yang Sedang Enrolled")
 
         pred_proba = model.predict_proba(df_enrolled)[:, 1]
         # Gunakan threshold 0.5 untuk klasifikasi
@@ -86,15 +86,15 @@ def main():
         ]])
 
         st.markdown("""
-        **Rekomendasi Aksi untuk Mahasiswa yang Diprediksi Dropout:**
+        ** ⚠️ Rekomendasi Aksi untuk Siswa yang Diprediksi Dropout:**
         - **Intervensi Akademik:** Berikan bimbingan belajar tambahan, konsultasi akademik, dan monitoring progres.
         - **Dukungan Finansial:** Tinjau kemungkinan beasiswa atau bantuan biaya kuliah.
         - **Konseling Psikologis:** Sediakan layanan konseling untuk mengatasi masalah pribadi atau motivasi.
-        - **Peningkatan Keterlibatan:** Ajak mahasiswa untuk bergabung dalam kegiatan kampus dan kelompok belajar.
+        - **Peningkatan Keterlibatan:** Ajak siswa untuk bergabung dalam kegiatan kampus dan kelompok belajar.
         """)
 
     elif menu == "Prediksi Input Pengguna":
-        st.markdown("### Prediksi Dropout Mahasiswa Berdasarkan Input Pengguna")
+        st.markdown("### Prediksi Dropout Siswa Berdasarkan Input Pengguna")
 
         with st.form("input_form"):
             completion_rate = st.number_input("1st Year Completion Unit Rate (0-1)", min_value=0.0, max_value=1.0, value=0.8, step=0.01)
@@ -127,17 +127,17 @@ def main():
             status = "Dropout" if graduate_prob < 0.5 else "Tidak Dropout"
 
             st.subheader("Hasil Prediksi")
-            st.write(f"Prediksi mahasiswa **{status}** dengan probabilitas:")
+            st.write(f"Prediksi Siswa **{status}** dengan probabilitas:")
             st.write(f"- Kemungkinan Tidak Dropout: {graduate_prob*100:.2f}%")
             st.write(f"- Kemungkinan Dropout: {prediction_proba[0]*100:.2f}%")
 
             if graduate_prob < 0.5:
                 st.markdown("""
-                ### ⚠️ Rekomendasi Aksi untuk Mahasiswa yang Berpotensi Dropout:
+                ### ⚠️ Rekomendasi Aksi untuk Siswa yang Berpotensi Dropout:
                 - **Intervensi Akademik:** Berikan bimbingan belajar tambahan, konsultasi akademik, dan monitoring progres.
                 - **Dukungan Finansial:** Tinjau kemungkinan beasiswa atau bantuan biaya kuliah.
                 - **Konseling Psikologis:** Sediakan layanan konseling untuk mengatasi masalah pribadi atau motivasi.
-                - **Peningkatan Keterlibatan:** Ajak mahasiswa untuk bergabung dalam kegiatan kampus dan kelompok belajar.
+                - **Peningkatan Keterlibatan:** Ajak siswa untuk bergabung dalam kegiatan kampus dan kelompok belajar.
                 """)
 
 st.sidebar.write("""
