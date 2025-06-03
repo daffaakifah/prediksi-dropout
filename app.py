@@ -83,7 +83,7 @@ def main():
         """)
 
     elif menu == "Prediksi Input Pengguna":
-        st.header("Prediksi Dropout Mahasiswa Berdasarkan Input Pengguna")
+        st.write("Prediksi Dropout Mahasiswa Berdasarkan Input Pengguna")
 
         with st.form("input_form"):
             completion_rate = st.number_input("1st Year Completion Unit Rate (0-1)", min_value=0.0, max_value=1.0, value=0.8, step=0.01)
