@@ -66,7 +66,7 @@ def main():
         # Gunakan threshold 0.5 untuk klasifikasi
         preds = np.where(pred_proba > 0.5, 1, 0)
 
-        df_enrolled['Prediksi_Dropout'] = np.where(preds == 1, 'Dropout', 'Tidak Dropout')
+        df_enrolled['Prediksi_Dropout'] = np.where(preds == 1, 'Tidak Dropout', 'Dropout')
         df_enrolled['Probabilitas_Dropout'] = pred_proba.round(3)
 
         st.dataframe(df_enrolled[[
@@ -113,12 +113,12 @@ def main():
 
             prediction_proba = model.predict_proba(input_data)[0]
             dropout_prob = prediction_proba[1]
-            status = "Dropout" if dropout_prob > 0.5 else "Tidak Dropout"
+            status = "Tidak Dropout" if dropout_prob > 0.5 else "Dropout"
 
             st.subheader("Hasil Prediksi")
             st.write(f"Prediksi mahasiswa **{status}** dengan probabilitas:")
-            st.write(f"- Dropout: {dropout_prob:.2f}")
-            st.write(f"- Tidak Dropout: {prediction_proba[0]:.2f}")
+            st.write(f"- Tidak Dropout: {dropout_prob:.2f}")
+            st.write(f"- Dropout: {prediction_proba[0]:.2f}")
 
             if dropout_prob > 0.5:
                 st.markdown("""
