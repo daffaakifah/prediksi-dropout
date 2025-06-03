@@ -70,8 +70,8 @@ def main():
         df_enrolled['Probabilitas_Dropout'] = pred_proba.round(3)
 
         st.dataframe(df_enrolled[[
-            '1st_year_completion_unit_rate', '1st_year_enrolled_unit', 'Admission_grade',
-            'Tuition_fees_up_to_date', 'Scholarship_holder', 'Prediksi_Dropout', 'Probabilitas_Dropout'
+            '1st_year_completion_unit_rate', '1st_year_enrolled_unit', 'Tuition_fees_up_to_date', '1st_year_approved_unit', 'Admission_grade', 'Scholarship_holder',  
+            '1st_year_unit_grade', '1st_year_success_evaluation_rate', 'Prediksi_Dropout', 'Probabilitas_Dropout'
         ]])
 
         st.markdown("""
