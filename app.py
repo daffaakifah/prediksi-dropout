@@ -59,14 +59,14 @@ def main():
 
     st.subheader("Latar Belakang Masalah")
     with st.container(border=True):
-    st.caption("🔍 Permasalahan Utama")
-    st.write("Jaya Jaya Institut (berdiri sejak 2000) dikenal sebagai pencetak lulusan berkualitas, tetapi menghadapi tantangan serius berupa tingginya angka dropout mahasiswa.")
+      st.caption("🔍 Permasalahan Utama")
+      st.write("Jaya Jaya Institut (berdiri sejak 2000) dikenal sebagai pencetak lulusan berkualitas, tetapi menghadapi tantangan serius berupa tingginya angka dropout mahasiswa.")
     
-    st.caption("💥 Dampak Negatif")
-    st.write("Fenomena ini merugikan citra institusi, efektivitas pembelajaran, efisiensi sumber daya, serta masa depan mahasiswa yang gagal meraih gelar.")
+      st.caption("💥 Dampak Negatif")
+      st.write("Fenomena ini merugikan citra institusi, efektivitas pembelajaran, efisiensi sumber daya, serta masa depan mahasiswa yang gagal meraih gelar.")
     
-    st.caption("🚀 Solusi Strategis")
-    st.write("Untuk mengatasi masalah ini, institusi berupaya mendeteksi dini mahasiswa berpotensi dropout agar dapat memberikan intervensi dan bimbingan khusus demi memastikan kelulusan mereka.")
+      st.caption("🚀 Solusi Strategis")
+      st.write("Untuk mengatasi masalah ini, institusi berupaya mendeteksi dini mahasiswa berpotensi dropout agar dapat memberikan intervensi dan bimbingan khusus demi memastikan kelulusan mereka.")
 
     menu = st.sidebar.selectbox("Pilih Menu", ["Prediksi Enrolled", "Prediksi Input Pengguna"])
 
