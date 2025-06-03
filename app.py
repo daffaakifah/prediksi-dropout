@@ -67,7 +67,7 @@ def main():
         preds = np.where(pred_proba > 0.5, 1, 0)
 
         df_enrolled['Prediksi_Dropout'] = np.where(preds == 1, 'Tidak Dropout', 'Dropout')
-        df_enrolled['Probabilitas_Dropout'] = pred_proba.round(3)
+        df_enrolled['Probabilitas_Graduate'] = pred_proba.round(3)
 
         st.dataframe(df_enrolled[[
             '1st_year_completion_unit_rate', '1st_year_enrolled_unit', 'Tuition_fees_up_to_date', '1st_year_approved_unit', 'Admission_grade', 'Scholarship_holder',  
