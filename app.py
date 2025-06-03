@@ -128,8 +128,8 @@ def main():
 
             st.subheader("Hasil Prediksi")
             st.write(f"Prediksi mahasiswa **{status}** dengan probabilitas:")
-            st.write(f"- Kemungkinan Tidak Dropout: {graduate_prob:.2f*100}%")
-            st.write(f"- Kemungkinan Dropout: {prediction_proba[0]:.2f*100}%")
+            st.write(f"- Kemungkinan Tidak Dropout: {graduate_prob*100:.2f}%")
+            st.write(f"- Kemungkinan Dropout: {prediction_proba[0]*100:.2f}%")
 
             if graduate_prob < 0.5:
                 st.markdown("""
