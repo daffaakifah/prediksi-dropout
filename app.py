@@ -52,13 +52,13 @@ def add_missing_features_with_defaults(df):
     return df
 
 def main():
-    st.title("📊 Prediksi Dropout Mahasiswa - Jaya Jaya Institute")
+    st.header("📊 Prediksi Dropout Mahasiswa - Jaya Jaya Institute")
 
     df_enrolled = load_data()
     df_enrolled = add_missing_features_with_defaults(df_enrolled)
 
-st.subheader("Latar Belakang Masalah")
-with st.container(border=True):
+    st.subheader("Latar Belakang Masalah")
+    with st.container(border=True):
     st.caption("🔍 Permasalahan Utama")
     st.write("Jaya Jaya Institut (berdiri sejak 2000) dikenal sebagai pencetak lulusan berkualitas, tetapi menghadapi tantangan serius berupa tingginya angka dropout mahasiswa.")
     
