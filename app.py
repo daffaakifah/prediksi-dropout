@@ -87,7 +87,7 @@ def main():
 
         st.markdown("""
         **⚠️ Rekomendasi Aksi untuk Siswa yang Diprediksi Dropout:**
-        - **Intervensi Akademik:** Berikan bimbingan belajar tambahan, konsultasi akademik, dan monitoring progres.
+        - **Bantuan Akademik:** Berikan bimbingan belajar tambahan, konsultasi akademik, dan monitoring progres.
         - **Dukungan Finansial:** Tinjau kemungkinan beasiswa atau bantuan biaya kuliah.
         - **Konseling Psikologis:** Sediakan layanan konseling untuk mengatasi masalah pribadi atau motivasi.
         - **Peningkatan Keterlibatan:** Ajak siswa untuk bergabung dalam kegiatan kampus dan kelompok belajar.
@@ -134,7 +134,7 @@ def main():
             if graduate_prob < 0.5:
                 st.markdown("""
                 ### ⚠️ Rekomendasi Aksi untuk Siswa yang Berpotensi Dropout:
-                - **Intervensi Akademik:** Berikan bimbingan belajar tambahan, konsultasi akademik, dan monitoring progres.
+                - **Bantuan Akademik:** Berikan bimbingan belajar tambahan, konsultasi akademik, dan monitoring progres.
                 - **Dukungan Finansial:** Tinjau kemungkinan beasiswa atau bantuan biaya kuliah.
                 - **Konseling Psikologis:** Sediakan layanan konseling untuk mengatasi masalah pribadi atau motivasi.
                 - **Peningkatan Keterlibatan:** Ajak siswa untuk bergabung dalam kegiatan kampus dan kelompok belajar.
