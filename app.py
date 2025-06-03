@@ -129,5 +129,12 @@ def main():
                 - **Peningkatan Keterlibatan:** Ajak mahasiswa untuk bergabung dalam kegiatan kampus dan kelompok belajar.
                 """)
 
+st.sidebar.write("""
+    - **Dataset:** [Jaya Jaya Institut's Students' Performance](https://github.com/dicodingacademy/dicoding_dataset/blob/main/students_performance/data.csv)
+    - **Dibuat oleh:** Daffa Akifah Balqis
+    - **Email:** daffaakifahbalqis01@gmail.com
+    - **Dicoding Username:** daffabalqis
+""")
+
 if __name__ == "__main__":
     main()
