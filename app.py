@@ -60,7 +60,13 @@ def main():
     menu = st.sidebar.selectbox("Pilih Menu", ["Prediksi Enrolled", "Prediksi Input Pengguna"])
 
     if menu == "Prediksi Enrolled":
-        st.write("Prediksi Dropout Mahasiswa  berdasarkan data yang Sedang Enrolled")
+        st.write("Jaya Jaya Institut merupakan institusi pendidikan tinggi yang telah berdiri sejak tahun 2000 dan dikenal luas berkat reputasinya dalam mencetak lulusan berkualitas. Namun, di balik prestasi tersebut, 
+        institusi ini menghadapi tantangan serius berupa tingginya angka mahasiswa yang tidak menyelesaikan studi alias dropout. 
+        Fenomena ini menjadi perhatian utama karena dapat berdampak negatif terhadap citra institusi, efektivitas proses belajar-mengajar, serta efisiensi penggunaan sumber daya. 
+        Tingginya tingkat dropout tidak hanya merugikan institusi, tetapi juga para mahasiswa yang gagal meraih gelar dan masa depan yang lebih baik. 
+        Oleh karena itu, Jaya Jaya Institut berupaya untuk mendeteksi secara dini mahasiswa yang berpotensi mengalami dropout. Dengan deteksi dini, institusi dapat memberikan intervensi dan bimbingan khusus agar mahasiswa 
+        tersebut tetap termotivasi dan mampu menyelesaikan pendidikannya.")
+        st.write("Prediksi Dropout Mahasiswa berdasarkan data yang Sedang Enrolled")
 
         pred_proba = model.predict_proba(df_enrolled)[:, 1]
         # Gunakan threshold 0.5 untuk klasifikasi
@@ -131,7 +137,6 @@ def main():
 
 st.sidebar.write("""
     - **Dataset:** [Jaya Jaya Institut's Students' Performance](https://github.com/dicodingacademy/dicoding_dataset/blob/main/students_performance/data.csv)
-    - **Dibuat oleh:** Daffa Akifah Balqis
     - **Email:** daffaakifahbalqis01@gmail.com
     - **Dicoding Username:** daffabalqis
 """)
