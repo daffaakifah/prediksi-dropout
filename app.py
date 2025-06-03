@@ -57,13 +57,21 @@ def main():
     df_enrolled = load_data()
     df_enrolled = add_missing_features_with_defaults(df_enrolled)
 
+st.subheader("Latar Belakang Masalah")
+with st.container(border=True):
+    st.caption("🔍 Permasalahan Utama")
+    st.write("Jaya Jaya Institut (berdiri sejak 2000) dikenal sebagai pencetak lulusan berkualitas, tetapi menghadapi tantangan serius berupa tingginya angka dropout mahasiswa.")
+    
+    st.caption("💥 Dampak Negatif")
+    st.write("Fenomena ini merugikan citra institusi, efektivitas pembelajaran, efisiensi sumber daya, serta masa depan mahasiswa yang gagal meraih gelar.")
+    
+    st.caption("🚀 Solusi Strategis")
+    st.write("Untuk mengatasi masalah ini, institusi berupaya mendeteksi dini mahasiswa berpotensi dropout agar dapat memberikan intervensi dan bimbingan khusus demi memastikan kelulusan mereka.")
+
     menu = st.sidebar.selectbox("Pilih Menu", ["Prediksi Enrolled", "Prediksi Input Pengguna"])
 
     if menu == "Prediksi Enrolled":
-        st.write("Jaya Jaya Institut (berdiri sejak 2000) dikenal sebagai pencetak lulusan berkualitas, tetapi menghadapi tantangan serius berupa tingginya angka dropout mahasiswa."
-                 "Fenomena ini merugikan citra institusi, efektivitas pembelajaran, efisiensi sumber daya, serta masa depan mahasiswa yang gagal meraih gelar."
-                 "Untuk mengatasi masalah ini, institusi berupaya mendeteksi dini mahasiswa berpotensi dropout agar dapat memberikan intervensi dan bimbingan khusus demi memastikan kelulusan mereka.")
-        st3.header("Prediksi Dropout Mahasiswa berdasarkan data yang Sedang Enrolled")
+        st.markdown("### Prediksi Dropout Mahasiswa berdasarkan data yang Sedang Enrolled")
 
         pred_proba = model.predict_proba(df_enrolled)[:, 1]
         # Gunakan threshold 0.5 untuk klasifikasi
@@ -86,7 +94,7 @@ def main():
         """)
 
     elif menu == "Prediksi Input Pengguna":
-        st.write("Prediksi Dropout Mahasiswa Berdasarkan Input Pengguna")
+        st.markdown("### Prediksi Dropout Mahasiswa Berdasarkan Input Pengguna")
 
         with st.form("input_form"):
             completion_rate = st.number_input("1st Year Completion Unit Rate (0-1)", min_value=0.0, max_value=1.0, value=0.8, step=0.01)
